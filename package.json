@@ -1,5 +1,5 @@
 {
-  "name": "vite-ts-template",
+  "name": "rmlfrontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,26 +9,40 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.194",
-    "easy-peasy": "^5.2.0",
-    "lodash": "^4.17.21",
+    "@comake/rmlmapper-js": "^0.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0"
   },
   "devDependencies": {
+    "@codemirror/lang-javascript": "^6.1.6",
+    "@material-ui/core": "^4.12.4",
+    "@tanstack/react-table": "^8.8.5",
+    "@types/jsonld": "^1.5.8",
+    "@types/lodash": "^4.14.192",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.58.0",
-    "@typescript-eslint/parser": "^5.58.0",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@uiw/react-codemirror": "^4.19.16",
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.38.0",
+    "eslint-config": "^0.3.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
-    "postcss": "^8.4.22",
+    "jsonld": "^8.1.1",
+    "postcss": "^8.4.21",
     "prettier": "^2.8.7",
+    "react-flow-renderer": "^10.3.17",
+    "reactflow": "^11.7.0",
     "tailwindcss": "^3.3.1",
     "typescript": "^4.9.3",
     "vite": "^4.2.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/sac6inarya/RMLMapping.git",
+  "author": "sac6inarya <sachinkarya333@gmail.com>",
+  "license": "MIT"
 }
