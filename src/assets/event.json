@@ -1,0 +1,10 @@
+{
+    "name": "Event x",
+    "dates": [
+        {
+            "startDate": "15/03",
+            "endDate": "18/03"
+        }
+    ],
+    "speaker": "Aniruddha"
+}
