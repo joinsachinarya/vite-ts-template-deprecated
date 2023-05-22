@@ -4,7 +4,7 @@ import Home from "./Components";
 
 function App() {
   return (
-    <div className="App">
+    <div className="flex justify-center items-center">
       <Home />
     </div>
   );
