@@ -2876,7 +2876,7 @@ react-fast-compare@^2.0.1:
 
 "react-forms-lite@git+https://github.com/mithya-team/react-forms-lite.git#dev":
   version "1.1.5"
-  resolved "git+https://github.com/mithya-team/react-forms-lite.git#21438e714ad8515ee3ef60f9ee0522e9bf2b74fd"
+  resolved "git+https://github.com/mithya-team/react-forms-lite.git#51975ce043228cd1fbc6dd4de29ddf2e7aeec120"
   dependencies:
     clsx "^1.2.1"
     formik "^2.2.9"
