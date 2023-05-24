@@ -2874,9 +2874,8 @@ react-fast-compare@^2.0.1:
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
 
-"react-forms-lite@git+https://github.com/mithya-team/react-forms-lite.git#dev":
+react-forms-lite@/Users/mithyalabs/Desktop/react-forms-lite:
   version "1.1.5"
-  resolved "git+https://github.com/mithya-team/react-forms-lite.git#51975ce043228cd1fbc6dd4de29ddf2e7aeec120"
   dependencies:
     clsx "^1.2.1"
     formik "^2.2.9"

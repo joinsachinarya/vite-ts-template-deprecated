@@ -5,10 +5,11 @@ import "react-forms-lite/dist/index.css";
 function Home() {
   const myConfig = [
     {
-      type: "text",
+      type: "number",
       valueKey: "name",
       fieldProps: {
         placeholder: "Enter name",
+        value: 50,
       },
     },
   ];
