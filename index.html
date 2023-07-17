@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: beige;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div style="width:50%; margin-right: 30px;">
+            <a>
+                YAV
+            </a>
+        </div>
+        <div style="width:150%; border: 2px solid blueviolet; padding: 40px;">
+            <form style="display: flex; flex-direction: column;" onsubmit="logValue(event)">
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <h4 style="color: orange;">Book a call</h4>
+                    <p>Lorem ipsum dolor, sit amet consecteture nas cumque.</p>
+                </div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="time">Date</label>
+                <input type="datetime-local" id="time" name="time">
+
+                <button type="submit">Get A Call</button>
+            </form>
+        </div>
+
+        <div style="display: flex; width:50%; margin-left: 30px;">
+            <div style="width: 80px; height: 30px; border: 2px solid rgb(40, 84, 160); margin-right: 10px;"></div>
+            <div style="width: 80px; height: 30px;  border: 2px solid rgb(40, 84, 160);"></div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
