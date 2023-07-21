@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <li id="green">HELLO</li>
+    <li id="yellow">HELLO</li>
+
+    <form id="myform">
+        <label id="inputlabel" for="inputfield">Input Lable: </label>
+        <input id="inputfield" type="text" name="inputfield" />
+        <button id="btn">Submit</button>
+    </form>
+
+</body>
+<script>
+    let ele1 = document.getElementById("green");
+    let ele2 = document.getElementById("yellow");
+    ele1.style.color = "green";
+    ele2.style.color = "yellow";
+
+    ele1.addEventListener("mouseover", function () {
+        console.log("Mouseover on green Hello");
+    })
+    ele2.addEventListener("mouseover", function () {
+        console.log("Mouseover on yellow Hello");
+    })
+
+    let myform = window.document.getElementById("myform");
+    let inputfield = document.getElementById("inputfield");
+    let btn = document.getElementById("btn");
+
+    myform.addEventListener("submit", function () {
+        event.preventDefault();
+        let value = inputfield.value;
+        if (value.trim() === "") {
+            console.error("Please enter some value");
+        }
+        console.log(value);
+    })
+</script>
+
+</html>
