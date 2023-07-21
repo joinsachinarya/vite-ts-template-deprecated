@@ -11,3 +11,16 @@ const logValue = (event) => {
     console.log("Time:", timeValue);
 
 }
+
+const person = {
+    age: 26,
+    firstName: "Yash",
+    lastName: "Prasad",
+    hobbies: ['music', 'movies', 'sports'],
+    address: {
+        street: '50 main street',
+        city: 'BLR',
+        state: 'Karnataka'
+    }
+}
+
