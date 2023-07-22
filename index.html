@@ -35,18 +35,24 @@
 
 
     <script>
+        let listArray = document.querySelectorAll(".list-group-item");
+        listArray[1].style.background = "green";
+        listArray[2].style.visibility = "hidden";
         document.querySelector(".form-inline").addEventListener("submit", function (event) {
             event.preventDefault();
             let val = document.querySelector(".form-control").value;
             console.log(val)
 
-            let listArray = document.getElementById("items");
 
             let newItem = document.createElement("li");
             newItem.className = "diff-class";
             newItem.textContent = val;
-            listArray.appendChild(newItem);
+            document.getElementById("items").appendChild(newItem);
+
         })
+
+
+
     </script>
 
 </body>
