@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header id="main-header" class="bg-danger text-primary p-4 mb-3">
+    <header id="main-header" class="bg-success text-white p-4 mb-3">
         <div class="container">
             <h1 id="header-title">Item Lister <span style="display:none">123</span></h1>
         </div>
@@ -32,6 +32,23 @@
             </ul>
         </div>
     </div>
+
+
+    <script>
+        document.querySelector(".form-inline").addEventListener("submit", function (event) {
+            event.preventDefault();
+            let val = document.querySelector(".form-control").value;
+            console.log(val)
+
+            let listArray = document.getElementById("items");
+
+            let newItem = document.createElement("li");
+            newItem.className = "diff-class";
+            newItem.textContent = val;
+            // newItem.value = "val";
+            listArray.appendChild(newItem);
+        })
+    </script>
 
 </body>
 
