@@ -35,25 +35,95 @@
 
 
     <script>
-        let listArray = document.querySelectorAll(".list-group-item");
-        listArray[1].style.background = "green";
-        listArray[2].style.visibility = "hidden";
-        document.querySelector(".form-inline").addEventListener("submit", function (event) {
-            event.preventDefault();
-            let val = document.querySelector(".form-control").value;
-            console.log(val)
-
-
-            let newItem = document.createElement("li");
-            newItem.className = "diff-class";
-            newItem.textContent = val;
-            document.getElementById("items").appendChild(newItem);
-
-        })
-
-
+        // let listArray = document.querySelectorAll(".list-group-item");
+        // listArray[1].style.background = "green";
+        // listArray[2].style.visibility = "hidden";
+        // document.querySelector(".form-inline").addEventListener("submit", function (event) {
+        //     event.preventDefault();
+        //     let val = document.querySelector(".form-control").value;
+        //     console.log(val)
+        //     let newItem = document.createElement("li");
+        //     newItem.className = "diff-class";
+        //     newItem.textContent = val;
+        //     document.getElementById("items").appendChild(newItem);
+        // })
 
     </script>
+
+    <script>
+        // Get the parent element
+        const itemsList = document.getElementById("items");
+
+        // Create a new child element
+        const newItem = document.createElement("li");
+        newItem.className = "list-group-item";
+        newItem.textContent = "New Item";
+
+        // Add the new child element to the parent element
+        itemsList.appendChild(newItem);
+
+        // Get the last element child
+        const lastElementChild = itemsList.lastElementChild;
+
+        // Get the last child (without considering text nodes)
+        const lastChild = itemsList.lastChild;
+
+        // Get the first element child
+        const firstElementChild = itemsList.firstElementChild;
+
+        // Get the first child (without considering text nodes)
+        const firstChild = itemsList.firstChild;
+
+        // Get the next sibling element
+        const nextSibling = newItem.nextElementSibling;
+
+        // Get the next sibling element (ignoring text nodes)
+        const nextElementSibling = newItem.nextSibling;
+
+        // Get the previous sibling element
+        const previousSibling = newItem.previousElementSibling;
+
+        // Get the previous sibling element (ignoring text nodes)
+        const previousElementSibling = newItem.previousSibling;
+
+        // Create a new element
+        const newElement = document.createElement("li");
+        newElement.className = "list-group-item";
+        newElement.textContent = "Another New Item";
+
+        // Add attribute to the new element
+        newElement.setAttribute("data-index", "5");
+
+        // Create a new text node
+        const textNode = document.createTextNode("Yet Another Item");
+
+        // Append the text node to the new element
+        newElement.appendChild(textNode);
+
+        // Append the new element to the parent element
+        itemsList.appendChild(newElement);
+
+
+
+
+
+
+
+
+
+
+        const headerTitle = document.getElementById("header-title");
+        headerTitle.textContent = "Hello " + headerTitle.textContent;
+
+        // Add "Hello" before "Item 1"
+        // const itemsList = document.getElementById("items");
+        const firstItem = itemsList.firstElementChild;
+        const helloElement = document.createElement("li");
+        helloElement.className = "list-group-item";
+        helloElement.textContent = "Hello Item 1";
+        itemsList.insertBefore(helloElement, firstItem);
+    </script>
+
 
 </body>
 
