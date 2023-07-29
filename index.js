@@ -1,3 +1,9 @@
+document.addEventListener('DOMContentLoaded', function () {
+    if (localStorage.getItem('items')) {
+        itemList.innerHTML = localStorage.getItem('items');
+    }
+});
+
 var form = document.getElementById("addform");
 var itemList = document.getElementById("items");
 var filter = document.getElementById("filter");
@@ -7,23 +13,23 @@ var filter = document.getElementById("filter");
 form.addEventListener("submit", addItem);
 //remove event
 itemList.addEventListener("click", removeItem);
-//filter event 
+//filter event
 filter.addEventListener("keyup", filterItems);
 //edit event
 itemList.addEventListener("click", editItem);
 
-function saveItem(itemsInLS) {
-    localStorage.setItem("itemsInLS", JSON.stringify(itemsInLS));
-}
-
-function createItem(itemNo, des) {
+//Add item function
+function addItem(e) {
+    e.preventDefault();
+    var newItem = document.getElementById("item").value;
     var li = document.createElement("li");
     li.className = "list-group-item";
-    li.appendChild(document.createTextNode(itemNo)); //add newItem text node into li
+    li.appendChild(document.createTextNode(newItem)); //add newItem text node into li
 
+    var newDes = document.getElementById("des").value;
     var i = document.createElement("i");
     i.className = "d-inline ml-2";
-    i.appendChild(document.createTextNode(des));
+    i.appendChild(document.createTextNode(newDes));
 
     //create delete button
     var deleteBtn = document.createElement("button");
@@ -39,28 +45,10 @@ function createItem(itemNo, des) {
 
     itemList.appendChild(li);
     li.appendChild(i);
-}
-
-//Add item function
-function addItem(e) {
-    e.preventDefault();
-
-    var item = document.getElementById("item").value;
-    var des = document.getElementById("des").value;
-
-    var newItem = {
-        itemNo: item,
-        description: des,
-    }
-    createItem(item, des);
-
-    var currItems = JSON.parse(localStorage.getItem("itemsInLS")) || [];
-    currItems.push(newItem);
-    console.log(currItems);
-    saveItem(currItems);
-
     document.getElementById("item").value = "";
     document.getElementById("des").value = "";
+
+    localStorage.setItem('items', itemList.innerHTML);
 
 }
 
@@ -70,7 +58,7 @@ function removeItem(e) {
         if (confirm("Are you sure?")) {
             var li = e.target.parentElement;
             itemList.removeChild(li);
-            saveItem(updatedItems);
+            localStorage.setItem('items', itemList.innerHTML);
         }
     }
 }
@@ -78,7 +66,6 @@ function removeItem(e) {
 //filter item function
 function filterItems(e) {
     var text = e.target.value.toLowerCase();
-
     var items = itemList.getElementsByTagName("li");
     var itemsArray = Array.from(items);
 
