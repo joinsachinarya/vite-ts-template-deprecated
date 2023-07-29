@@ -103,25 +103,25 @@ function filterItems(e) {
     });
 }
 
-// //editItem function
-// function editItem(e) {
-//     if (e.target.classList.contains("edit")) {
-//         var li = e.target.parentElement;
-//         var index = Array.from(itemList.children).indexOf(li);
+//editItem function
+function editItem(e) {
+    if (e.target.classList.contains("edit")) {
+        var li = e.target.parentElement;
+        var index = Array.from(itemList.children).indexOf(li);
 
-//         if (index !== -1) {
-//             var itemObj = itemsArray[index];
-//             var newItem = prompt("Edit Item Name:", itemObj.item);
-//             var newDes = prompt("Edit Description:", itemObj.description);
+        if (index !== -1) {
+            var itemObj = itemsArray[index];
+            var newItem = prompt("Edit Item Name:", itemObj.item);
+            var newDes = prompt("Edit Description:", itemObj.description);
 
-//             if (newItem !== null && newItem.trim() !== "") {
-//                 itemObj.item = newItem;
-//                 itemObj.description = newDes;
-//                 li.firstChild.textContent = newItem;
-//                 li.getElementsByTagName("i")[0].textContent = newDes;
+            if (newItem !== null && newItem.trim() !== "") {
+                itemObj.item = newItem;
+                itemObj.description = newDes;
+                li.firstChild.textContent = newItem;
+                li.getElementsByTagName("i")[0].textContent = newDes;
 
-//                 localStorage.setItem('items', JSON.stringify(itemsArray));
-//             }
-//         }
-//     }
-// }
+                localStorage.setItem('items', JSON.stringify(itemsArray));
+            }
+        }
+    }
+}
