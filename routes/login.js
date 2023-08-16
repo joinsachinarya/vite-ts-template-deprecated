@@ -7,4 +7,8 @@ router.get("/login", (req, res) => {
   );
 });
 
+router.post("/login", (req, res) => {
+  console.log("Logged in!");
+  res.redirect("/");
+});
 module.exports = router;

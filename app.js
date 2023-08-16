@@ -3,7 +3,6 @@ const homeRoute = require("./routes/home");
 const loginRoute = require("./routes/login");
 
 const app = express();
-
 app.use(homeRoute);
 app.use(loginRoute);
 
