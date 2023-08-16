@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
       `${data}
       <form method="POST" action="/message" onsubmit="document.getElementById('username').value=localStorage.getItem('username')">
       <input type="text" name="message" id="message" placeholder="Type message">
-      <input type="hidden" name="username" id="username">
+      <input type="hidden" name="usernameHomePage" id="username">
       <br/>
       <button type="submit">Send</button>
       </form>
@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
 
 router.post("/message", (req, res) => {
   let msg = req.body.message;
-  let uname = req.body.username;
+  let uname = req.body.usernameHomePage;
   fs.writeFile("message.txt", `${uname}:${msg} `, { flag: "a" }, (err) => {
     err ? console.error(err) : res.redirect("/");
   });
