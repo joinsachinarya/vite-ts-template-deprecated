@@ -1,0 +1,27 @@
+{
+  "name": "simple-group-chat-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sac6inarya/Simple-Group-Chat-Application.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sac6inarya/Simple-Group-Chat-Application/issues"
+  },
+  "homepage": "https://github.com/sac6inarya/Simple-Group-Chat-Application#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
