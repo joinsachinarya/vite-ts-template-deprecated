@@ -1,27 +1,32 @@
 const express = require("express");
 const fs = require("fs");
-const bodyParser = require("body-parser");
 
 const router = express.Router();
-router.use(bodyParser.urlencoded({ extended: false }));
 
 router.get("/", (req, res) => {
-  let texFileMessage = fs.readFileSync("message.txt", "utf-8");
-  res.send(
-    `<form method="POST" action="/message" onsubmit="document.getElementById('username').value=localStorage.getItem('username')">
-    <input type="text" name="message" placeholder="Type message">
-    <button type="submit">Send</button>
-    </form>
-    <div>
-    <p id="username"></p>
-    ${texFileMessage}
-    </div>`
-  );
+  fs.readFile("message.txt", (err, data) => {
+    if (err) {
+      console.error(err);
+    }
+    res.send(
+      `${data}
+      <form method="POST" action="/message" onsubmit="document.getElementById('username').value=localStorage.getItem('username')">
+      <input type="text" name="message" id="message" placeholder="Type message">
+      <input type="hidden" name="username" id="username">
+      <br/>
+      <button type="submit">Send</button>
+      </form>
+      `
+    );
+  });
 });
 
 router.post("/message", (req, res) => {
   let msg = req.body.message;
-  fs.appendFileSync("message.txt", msg + "\n");
-  res.redirect("/");
+  let uname = req.body.username;
+  fs.writeFile("message.txt", `${uname}:${msg} `, { flag: "a" }, (err) => {
+    err ? console.error(err) : res.redirect("/");
+  });
 });
+
 module.exports = router;

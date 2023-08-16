@@ -8,7 +8,8 @@ router.get("/login", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-  console.log(`Logged in!`);
+  let username = req.body.username;
+  console.log(`Logged in as ${username}!`);
   res.redirect("/");
 });
 module.exports = router;
