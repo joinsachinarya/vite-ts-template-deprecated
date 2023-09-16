@@ -1,14 +1,28 @@
 import { useState } from "react";
 
 const Square = () => {
-  const [sign, setSign] = useState("");
+  const [value, setValue] = useState("");
+  const [clickCount, setClickCount] = useState(0);
   const handleClick = () => {
-    setSign("X");
+    setClickCount(clickCount++);
+    console.log(clickCount);
+    // if (clickCount % 2 === 0) {
+    //   setValue("❌");
+    //   setClickCount(() => {
+    //     clickCount = clickCount + 1;
+    //   });
+    // } else {
+    //   setValue("⭕");
+    //   setClickCount(() => {
+    //     clickCount = clickCount + 1;
+    //   });
+    // }
   };
   return (
     <button className="box" onClick={handleClick}>
-      {sign}1
+      {value}
     </button>
   );
 };
+
 export default Square;
